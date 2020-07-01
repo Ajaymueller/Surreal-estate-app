@@ -3,6 +3,7 @@ import '../styles/App.css';
 import NavBar from './NavBar';
 import Properties from './Properties';
 import AddProperty from './AddProperty';
+import Alert from './Alert';
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
