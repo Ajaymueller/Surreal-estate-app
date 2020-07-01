@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/AddProperty.css';
+import addProperty from '../requests/addProperty';
 
 const AddProperty = () => {
 
@@ -15,7 +16,7 @@ const AddProperty = () => {
 
     const handleAddProperty = (event) => {
         event.preventDefault();
-        console.log(fields);
+        addProperty(fields);
     }
 
     const handleFieldChange = (event) => {
@@ -24,6 +25,7 @@ const AddProperty = () => {
 
     return(
         <div className="AddProperty">
+            <h3>Add a property</h3>
             <form
             onSubmit={handleAddProperty}
             className="form">
@@ -70,9 +72,8 @@ const AddProperty = () => {
                 </div>
                 <div className="add-btn">
                 <label htmlFor="add">
-                    Add:
                 <button type="submit" 
-                className="btn"></button>
+                className="btn">Add</button>
                 </label>  
                 </div>
             </form>
