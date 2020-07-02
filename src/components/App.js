@@ -22,6 +22,7 @@ function App() {
           <AddProperty />
 
         </Route>
+        <Alert />
 
 
       </Switch>

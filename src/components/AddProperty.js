@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/AddProperty.css';
-import addProperty from '../requests/addProperty';
+//import addProperty from '../requests/addProperty';
+import axios from 'axios';
+import Alert from './Alert';
 
 const AddProperty = () => {
 
@@ -9,14 +11,43 @@ const AddProperty = () => {
         title: '',
         city: 'Manchester', 
         type: '',
-    }
+        bathrooms: '',
+        bedrooms: '', 
+        price: '', 
+        email: '',
+    }, 
+    alert: {
+        message: '', 
+        isSuccess: false,
+    },
 }
 
     const [fields, setFields] = useState(initialState.fields);
 
+    const [alert, setAlert] = useState(initialState.alert);
+
     const handleAddProperty = (event) => {
         event.preventDefault();
-        addProperty(fields);
+        setAlert({ message: "", isSuccess: false });
+        //addProperty(fields);
+        axios
+        .post('http://localhost:4000/api/v1/PropertyListing', { title: title.value, city: city.value, type: type.value })
+        .then((response) => {
+        console.log(response)
+        setAlert({
+            message: "Property Added",
+            isSuccess: true,
+          })
+    }).
+    catch((err) => {
+    console.log(err);
+    setAlert({
+        message: "Server error. Please try again later.",
+        isSuccess: false,
+      })
+    })
+
+
     }
 
     const handleFieldChange = (event) => {
@@ -70,12 +101,62 @@ const AddProperty = () => {
                     </select>
                 </label>
                 </div>
+                <div className="bathroom-input">
+                    <label htmlFor="bathroom">
+                        Bathrooms:<select 
+                        id="bathrooms"
+                        name="bathrooms"
+                        value={fields.bathrooms}
+                        onChange={handleFieldChange}>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6+">6+</option>
+                        </select>
+                    </label>
+                </div>
+                <div className="bedroom-input">
+                    <label htmlFor="bedroom">
+                        Bedrooms:<select 
+                        id="bedrooms"
+                        name="bedrooms"
+                        value={fields.bedrooms}
+                        onChange={handleFieldChange}>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6+">6+</option>
+                        </select>
+                    </label>
+                </div>
+                <div className="price-input">
+                    <label htmlFor="price">
+                        Price: <input type="text"
+                        id="price"
+                        value={fields.price}
+                        onChange={handleFieldChange} />
+                    </label>
+                </div>
+                <div className="email-input">
+                    <label htmlFor="email">
+                        Email:<input type="email"
+                        id="email"
+                        value={fields.email}
+                        onChange={handleFieldChange} />
+                    </label>
+                </div>
                 <div className="add-btn">
                 <label htmlFor="add">
                 <button type="submit" 
                 className="btn">Add</button>
                 </label>  
                 </div>
+                {alert.message && 
+                (<Alert message={alert.message} success={alert.isSuccess} />)}
             </form>
         </div>
     )
