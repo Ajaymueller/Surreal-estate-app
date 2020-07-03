@@ -70,7 +70,8 @@ const AddProperty = () => {
                 name="title"
                 value={fields.title} 
                 onChange={handleFieldChange}
-                placeholder="Please enter a title" />
+                placeholder="Please enter a title" 
+                required />
                 </label>
                 </div>
                 <div className="city-input">
@@ -142,7 +143,8 @@ const AddProperty = () => {
                         id="price"
                         name="price"
                         value={fields.price}
-                        onChange={handleFieldChange} />
+                        onChange={handleFieldChange} 
+                        required/>
                     </label>
                 </div>
                 <div className="email-input">
@@ -151,7 +153,8 @@ const AddProperty = () => {
                         id="email"
                         name="email"
                         value={fields.email}
-                        onChange={handleFieldChange} />
+                        onChange={handleFieldChange}
+                        required />
                     </label>
                 </div>
                 <div className="add-btn">
