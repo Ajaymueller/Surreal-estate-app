@@ -30,24 +30,27 @@ const AddProperty = () => {
         event.preventDefault();
         setAlert({ message: "", isSuccess: false });
         //addProperty(fields);
-        axios
-        .post('http://localhost:4000/api/v1/PropertyListing', { title: title.value, city: city.value, type: type.value })
-        .then((response) => {
-        console.log(response)
+        if(!price.value === Number) {
+            alert("Price must be a number!")
+        } else {
+            axios
+            .post('http://localhost:4000/api/v1/PropertyListing', { title: title.value, city: city.value, type: type.value, 
+            bathrooms: bathrooms.value, bedrooms: bedrooms.value, price: price.value, email: email.value })
+            .then((response) => {
+            console.log(response)
+            setAlert({
+                message: "Property Added",
+                isSuccess: true,
+              })
+        }).
+        catch((err) => {
+        console.log(err);
         setAlert({
-            message: "Property Added",
-            isSuccess: true,
+            message: "Server error. Please try again later.",
+            isSuccess: false,
           })
-    }).
-    catch((err) => {
-    console.log(err);
-    setAlert({
-        message: "Server error. Please try again later.",
-        isSuccess: false,
-      })
-    })
-
-
+        })
+        }
     }
 
     const handleFieldChange = (event) => {
@@ -102,7 +105,7 @@ const AddProperty = () => {
                 </label>
                 </div>
                 <div className="bathroom-input">
-                    <label htmlFor="bathroom">
+                    <label htmlFor="bathrooms">
                         Bathrooms:<select 
                         id="bathrooms"
                         name="bathrooms"
@@ -118,7 +121,7 @@ const AddProperty = () => {
                     </label>
                 </div>
                 <div className="bedroom-input">
-                    <label htmlFor="bedroom">
+                    <label htmlFor="bedrooms">
                         Bedrooms:<select 
                         id="bedrooms"
                         name="bedrooms"
@@ -137,6 +140,7 @@ const AddProperty = () => {
                     <label htmlFor="price">
                         Price: <input type="text"
                         id="price"
+                        name="price"
                         value={fields.price}
                         onChange={handleFieldChange} />
                     </label>
@@ -145,6 +149,7 @@ const AddProperty = () => {
                     <label htmlFor="email">
                         Email:<input type="email"
                         id="email"
+                        name="email"
                         value={fields.email}
                         onChange={handleFieldChange} />
                     </label>
