@@ -6,25 +6,22 @@ const PropertyCard = ({title, type, bathrooms, bedrooms, price, city, email}) =>
         return (
             <div className="property-card">
                 <div className="title">
-                    title: {title}
+                    {title}
                 </div>
                 <div className="type">
-                    type:{type}
+                    {type} - {city}
                 </div>
                 <div className="bathrooms">
-                    bathrooms:{bathrooms}
+                    Bathrooms: {bathrooms}
                 </div>
                 <div className="bedrooms">
-                    bedrooms:{bedrooms}
+                    Bedrooms: {bedrooms}
                 </div>
                 <div className="price">
-                    Price{price}
-                </div>
-                <div className="city">
-                    Location: {city}
+                    Price: £{price}
                 </div>
                 <div className="email">
-                    Email: {email}
+                    <a href={email}>Email for more details</a>
                 </div>
             </div>
         )
