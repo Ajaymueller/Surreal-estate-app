@@ -29,7 +29,6 @@ const AddProperty = () => {
     const handleAddProperty = (event) => {
         event.preventDefault();
         setAlert({ message: "", isSuccess: false });
-        //addProperty(fields);
         if(!price.value === Number) {
             alert("Price must be a number!")
         } else {
