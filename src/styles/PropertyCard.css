@@ -1,8 +1,9 @@
 .property-card {
     display: inline-block;
     width: 33.33%;
-    padding: 0 10px;
-    border: 5px solid red;
+    padding: 10px;
+    border: 5px solid white;
+    border-radius: 10px;
     box-sizing: border-box;
     font-size: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -15,6 +16,7 @@
     font-size: larger;
     font-weight: bold;
 }
+
 
 @media screen and (max-width: 600px) {
     .column {

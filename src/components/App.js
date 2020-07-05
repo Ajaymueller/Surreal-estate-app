@@ -8,7 +8,6 @@ import { Route, Switch } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <h2>Surreal Estate</h2>
       <NavBar />
       <Switch>
         <Route exact path="/" component={Properties}>

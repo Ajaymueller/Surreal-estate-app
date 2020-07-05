@@ -21,7 +21,7 @@ const PropertyCard = ({title, type, bathrooms, bedrooms, price, city, email}) =>
                     Price: £{price}
                 </div>
                 <div className="email">
-                    <a href={email}>Email for more details</a>
+                    <a href={`mailto:${email}`}>Email for more details</a>
                 </div>
             </div>
         )
