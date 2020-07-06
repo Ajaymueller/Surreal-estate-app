@@ -33,7 +33,7 @@ const Properties = () => {
         }, []);
 
     return (
-        <div>
+        <div className="properties">
             {properties.map(property => <PropertyCard key={property._id} title={property.title}
             type={property.type} bathrooms={property.bathrooms}
             bedrooms={property.bedrooms} price={property.price}
