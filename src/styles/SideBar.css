@@ -26,3 +26,7 @@
     justify-content: start;
     flex-direction: column;
 }
+
+ .side-bar li {
+    color: black;
+}

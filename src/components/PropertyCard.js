@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../styles/PropertyCard.css';
 
 const PropertyCard = ({title, type, bathrooms, bedrooms, price, city, email}) => {
