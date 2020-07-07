@@ -25,7 +25,7 @@ const SideBar = () => {
         };
       
         return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
-      };
+    };
 
     const handleSearch = (event) => {
         event.preventDefault();

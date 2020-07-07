@@ -19,6 +19,10 @@
     font-weight: bold;
 }
 
+a:hover {
+  color: green
+}
+
 
 @media screen and (max-width: 600px) {
     .column {

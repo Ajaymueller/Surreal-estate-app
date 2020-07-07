@@ -34,12 +34,12 @@ const Properties = () => {
 
     return (
         <div className="properties">
+            <SideBar />
             {properties.map(property => <PropertyCard key={property._id} title={property.title}
             type={property.type} bathrooms={property.bathrooms}
             bedrooms={property.bedrooms} price={property.price}
             city={property.city} email={property.email} />)}
             <Alert message={alert.message} success={alert.isSuccess} />
-            <SideBar />
         </div>
         )
 };

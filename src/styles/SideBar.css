@@ -1,14 +1,9 @@
 .side-bar {
-    position: fixed;
-    width: 150px;
-    height: 100%;
-    background: #1e1e1e;
-    transition: all .5s ease;
-    z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background-color: white;
+  left: 0px;
+  height: 100%;
+  transition: all .5s ease;
+  background-color: #f1f1f1;
+  border: 1px solid #555;
 }
 
 .sidebar ul li {
@@ -20,7 +15,7 @@
 
 .navbar-links {
     list-style: none;
-    padding: 12px 10px;
+    padding: 16px 10px;
     display: flex;
     border-bottom: 20px;
     justify-content: start;
@@ -29,4 +24,23 @@
 
  .side-bar li {
     color: black;
+    margin: 10px;
+}
+
+.side-bar button {
+    margin-top: 8px;
+    background-color: #4CAF50;
+    border-radius: 10px;
+}
+
+.side-bar button:hover {
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+    cursor: pointer;
+}
+
+.navbar-links li:hover {
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+    cursor: pointer;
 }
