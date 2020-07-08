@@ -22,3 +22,35 @@ const Navbar = () => {
 }
 
 export default Navbar;
+
+/*@media only screen and (max-width: 800px) {
+    nav ul {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    #nav_links li {
+        font-size: 20px;
+        padding: 0px;
+    }
+
+    .Navbar nav {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background: #333;
+        border-bottom: 10px solid grey;
+        margin: 0 auto;
+        text-align: left;
+        justify-content: flex-start;
+        width: calc(100% - 60px);
+        height: 180px;
+    }
+
+    .logo {
+        height: 75px;
+        width: 200px
+    }
+} */

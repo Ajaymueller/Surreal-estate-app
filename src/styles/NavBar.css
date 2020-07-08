@@ -19,7 +19,6 @@
 
 .Navbar nav {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
     background: #333;
     border-bottom: 10px solid grey;
@@ -27,7 +26,10 @@
     text-align: left;
     justify-content: flex-start;
     height: 100px;
-    width: 100%;
+    width: calc(100% - 60px);
+    transition: all .5s ease;
+    max-width: 100%;
+    min-width: 1000px;
 }
 
 .logo {
@@ -58,4 +60,46 @@
     color:#BBBBBB;
     border-color:#BBBBBB;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 750px) {
+    #nav_links li {
+        font-size: 20px;
+        padding: 0px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        height: 75px;
+        width: 200px
+    }
+
+    .Navbar nav {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background: #333;
+        margin: 0 auto;
+        text-align: left;
+        border-bottom: 5px solid grey;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #nav_links li {
+        font-size: 15px;
+        padding: 0px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        width: 175px; 
+        height: 50px;
+    }
+
+    .Navbar nav {
+        height: 75px;
+    }
 }
