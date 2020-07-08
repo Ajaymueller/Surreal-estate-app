@@ -1,105 +1,24 @@
-.Nav-bar {
-    top: 0;
-    border-bottom: 10px solid grey;
-    position: relative;
-    width: calc(100% - 60px);
-    margin: 0 auto;
-    margin-bottom: 50px;
-    padding: 10px 0;
-    background: #333;
-    z-index: 1;
-    text-align: left;
-    padding-right: 2%;
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #c6c6c6;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    flex-direction: column;
-    height: 100px;
-}
-
-.Navbar nav {
-    display: flex;
-    flex-direction: row;
-    background: #333;
-    border-bottom: 10px solid grey;
-    margin: 0 auto;
-    text-align: left;
-    justify-content: flex-start;
-    height: 100px;
-    width: calc(100% - 60px);
-    transition: all .5s ease;
-    max-width: 100%;
-    min-width: 1000px;
 }
 
 .logo {
-    height: 100px;
-    width: 300px;
-    display: inline-block;
+    height: 60px;
+    padding: 10px;
 }
 
 #nav_links {
-    display: block;
-    position: relative;
-    top: 0;
-    width: 80%;
-    height: 30px;
+    list-style: none;
+    text-decoration: none;
+    color: black;
 }
 
-#nav_links li {
+.navbar-links-item {
     display: inline-block;
-    margin-right: 20px;
-    font-size: 25px;
-    color:white;
-    padding: 7px;
-    text-align: center;
-    vertical-align: top;
-}
-
-#nav_links li:hover {
-    color:#BBBBBB;
-    border-color:#BBBBBB;
-    cursor: pointer;
-}
-
-@media only screen and (max-width: 750px) {
-    #nav_links li {
-        font-size: 20px;
-        padding: 0px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .logo {
-        height: 75px;
-        width: 200px
-    }
-
-    .Navbar nav {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        background: #333;
-        margin: 0 auto;
-        text-align: left;
-        border-bottom: 5px solid grey;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    #nav_links li {
-        font-size: 15px;
-        padding: 0px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .logo {
-        width: 175px; 
-        height: 50px;
-    }
-
-    .Navbar nav {
-        height: 75px;
-    }
+    margin: none;
+    padding: 10px;
 }
