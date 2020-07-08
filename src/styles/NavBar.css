@@ -1,5 +1,5 @@
 .Nav-bar {
-    background-color: white;
+    top: 0;
     border-bottom: 10px solid grey;
     position: relative;
     width: calc(100% - 60px);
@@ -17,30 +17,45 @@
     height: 100px;
 }
 
+.Navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background: #333;
+    border-bottom: 10px solid grey;
+    margin: 0 auto;
+    text-align: left;
+    justify-content: flex-start;
+    height: 100px;
+    width: 100%;
+}
+
 .logo {
-    height: 75px;
+    height: 100px;
     width: 300px;
     display: inline-block;
 }
 
-.navbar-links {
-    padding: 0;
-    margin: 0;
+#nav_links {
+    display: block;
+    position: relative;
+    top: 0;
+    width: 80%;
+    height: 30px;
 }
 
-.navbar-links-item {
-    margin: 0;
+#nav_links li {
     display: inline-block;
+    margin-right: 20px;
+    font-size: 25px;
+    color:white;
     padding: 7px;
     text-align: center;
     vertical-align: top;
 }
 
-nav {
-    width: 100%;
+#nav_links li:hover {
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+    cursor: pointer;
 }
-
-  li {
-      float: left;
-      color: white;
-  }

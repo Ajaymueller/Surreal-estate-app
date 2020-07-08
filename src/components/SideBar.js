@@ -46,10 +46,12 @@ const SideBar = () => {
                 <button type="submit">Search</button>
             </form>
         <ul className="navbar-links">
+            <h3>Filter by city</h3>
             <Link to={`/?query={"city": "Manchester"}`}><li>Manchester</li></Link>
             <Link to={`/?query={"city": "Leeds"}`}><li>Leeds</li></Link>
             <Link to={`/?query={"city": "Sheffield"}`}><li>Sheffield</li></Link>
             <Link to={`/?query={"city": "Liverpool"}`}><li>Liverpool</li></Link>
+            <h3>Sort by</h3>
             <Link to={buildQueryString('sort', { price: 1 })}><li>Ascending</li></Link>
             <Link to={buildQueryString('sort', { price: -1 })}><li>Descending</li></Link>
         </ul>

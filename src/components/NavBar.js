@@ -7,14 +7,12 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div className="Nav-bar">
-            <div className="logo">
-            <img 
+        <div className="Navbar" id="top-nav">
+        <nav>
+        <logo> <img 
         src={logo}
-        className="logo" />
-            </div>
-            <nav>
-        <ul className="navbar-links">
+        className="logo" /> </logo>
+        <ul id="nav_links">
             <Link to="/"> <li className="navbar-links-item">View Properties</li></Link>
             <Link to="/add-property" ><li className="navbar-links-item">Add a Property</li></Link>
         </ul>
