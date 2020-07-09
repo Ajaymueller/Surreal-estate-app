@@ -31,6 +31,7 @@ const SideBar = () => {
         event.preventDefault();
         const newQueryString = buildQueryString('query', { title: { $regex: query }});
         history.push(newQueryString);
+        setQuery("");
     };
 
     const handleChange = (e) => {

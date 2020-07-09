@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/App.css';
 import NavBar from './NavBar';
 import Properties from './Properties';
 import AddProperty from './AddProperty';
 import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { findByAllText } from '@testing-library/react';
 
 function App() {
+
+  const initialState = { userID: "" };
+
+  const [ userID, setUserID ] = useState(initialState);
+
+  const handleLogin = (response) => {
+    setUserID(response.userId)
+  };
+
+  const handleLogout = () => {
+    const FB = window.FB;
+    console.log(FB);
+    console.log(userID);
+    //FB.logout(() => setUserID(""));
+  }
+
   return (
     <div className="App">
-      <NavBar />
+      <Router>
+      <NavBar onLogin={handleLogin} userID={userID} onLogout={handleLogout} />
       <Switch>
         <Route exact path="/" component={Properties}>
           <Properties />
@@ -17,6 +36,7 @@ function App() {
           <AddProperty />
         </Route>
       </Switch>
+      </Router>
     </div>
   );
 }
