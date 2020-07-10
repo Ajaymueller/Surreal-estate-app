@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sidebar renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="side-bar"
+  >
+    <form>
+      <input
+        type="text"
+        value=""
+      />
+      <button
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+    <ul
+      class="navbar-links"
+      data-testid="navbarlinks-id"
+    >
+      <h3>
+        Filter by city
+      </h3>
+      <a
+        href="/?query={\\"city\\": \\"Manchester\\"}"
+      >
+        <li>
+          Manchester
+        </li>
+      </a>
+      <a
+        href="/?query={\\"city\\": \\"Leeds\\"}"
+      >
+        <li>
+          Leeds
+        </li>
+      </a>
+      <a
+        href="/?query={\\"city\\": \\"Sheffield\\"}"
+      >
+        <li>
+          Sheffield
+        </li>
+      </a>
+      <a
+        href="/?query={\\"city\\": \\"Liverpool\\"}"
+      >
+        <li>
+          Liverpool
+        </li>
+      </a>
+      <h3>
+        Sort by
+      </h3>
+      <a
+        href="/?sort={\\"price\\":1}"
+      >
+        <li>
+          Ascending
+        </li>
+      </a>
+      <a
+        href="/?sort={\\"price\\":-1}"
+      >
+        <li>
+          Descending
+        </li>
+      </a>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

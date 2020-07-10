@@ -46,7 +46,7 @@ const SideBar = () => {
                 onChange={handleChange} />
                 <button type="submit">Search</button>
             </form>
-        <ul className="navbar-links">
+        <ul className="navbar-links" data-testid="navbarlinks-id">
             <h3>Filter by city</h3>
             <Link to={`/?query={"city": "Manchester"}`}><li>Manchester</li></Link>
             <Link to={`/?query={"city": "Leeds"}`}><li>Leeds</li></Link>
