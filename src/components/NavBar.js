@@ -14,7 +14,7 @@ const Navbar = ({ onLogin, userID, onLogout }) => {
         className="logo"
         alt="logo" /> </div>
         <nav>
-        <ul id="nav_links">
+        <ul id="nav_links" data-testid="nav-links-id">
             <BrowserRouter>
             <Link to="/"> <li className="navbar-links-item">View Properties</li></Link>
             <Link to="/add-property" ><li className="navbar-links-item">Add a Property</li></Link>

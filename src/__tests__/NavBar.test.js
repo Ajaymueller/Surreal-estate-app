@@ -10,9 +10,24 @@ const props = {
 };
 
 describe("NavBar", () => {
-    it("component renders", () => {
+    it("component renders with correct props", () => {
         const { asFragment } = render( 
         <MemoryRouter><NavBar {...props} /></MemoryRouter>)
     expect(asFragment).toMatchSnapshot();
     });
+    it("displays a logo", () => {
+        const { getByAltText } = render( 
+        <MemoryRouter><NavBar {...props} /></MemoryRouter>)
+        const logo = getByAltText("logo");
+        expect(logo).toBeInTheDocument();
+    })
+    it("displays a list with link to properties and add properties page", () => {
+        const { getByText } = render( 
+        <MemoryRouter><NavBar {...props} /></MemoryRouter>)
+        const viewProperties = getByText("View Properties")
+        const addProperty = getByText("Add a Property")
+        expect(viewProperties).toBeInTheDocument();
+        expect(addProperty).toBeInTheDocument();
+
+    })
 });
