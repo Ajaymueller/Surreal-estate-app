@@ -20,6 +20,28 @@ describe("sidebar", () => {
         expect(filterByCity).toBeInTheDocument();
         expect(sortBy).toBeInTheDocument();
     })
+
+    it("has list with different city options", () => {
+        const { getByText } = render(
+        <MemoryRouter><SideBar /></MemoryRouter>)
+        const Manchester = getByText("Manchester")
+        const Leeds = getByText("Leeds")
+        const Sheffield = getByText("Sheffield")
+        const Liverpool = getByText("Liverpool")
+        expect(Manchester).toBeInTheDocument();
+        expect(Leeds).toBeInTheDocument();
+        expect(Sheffield).toBeInTheDocument();
+        expect(Liverpool).toBeInTheDocument();
+    })
+
+    it("sorts by ascending or descending", () => {
+        const { getByText } = render(
+        <MemoryRouter><SideBar /></MemoryRouter>)
+        const ascending = getByText("Ascending");
+        const descending = getByText("Descending");
+        expect(ascending).toBeInTheDocument();
+        expect(descending).toBeInTheDocument();
+    })
 });
 
 describe("form", () => {
