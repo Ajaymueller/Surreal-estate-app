@@ -5,7 +5,6 @@ import Properties from './Properties';
 import AddProperty from './AddProperty';
 import { Route, Switch } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { findByAllText } from '@testing-library/react';
 
 function App() {
 

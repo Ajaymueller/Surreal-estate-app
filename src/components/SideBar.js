@@ -40,11 +40,15 @@ const SideBar = () => {
 
     return (
         <div className="side-bar">
-            <form onSubmit={handleSearch}>
+            <form onSubmit={handleSearch} data-testid="form-id">
+                <label htmlFor="search-input">
                 <input type="text"
                 value={query}
-                onChange={handleChange} />
+                onChange={handleChange} 
+                data-testid="input-id"
+                className="input"/>
                 <button type="submit">Search</button>
+                </label>
             </form>
         <ul className="navbar-links" data-testid="navbarlinks-id">
             <h3>Filter by city</h3>
