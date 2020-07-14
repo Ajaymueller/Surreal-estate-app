@@ -17,10 +17,7 @@ function App() {
   };
 
   const handleLogout = () => {
-    const FB = window.FB;
-    console.log(FB);
-    console.log(userID);
-    //FB.logout(() => setUserID(""));
+    window.FB.logout(() => setUserID(""));
   }
 
   return (

@@ -61,8 +61,9 @@ const AddProperty = () => {
             <h3>Add a property</h3>
             <form
             onSubmit={handleAddProperty}
-            className="form">
-                <div className="title-input">
+            className="form"
+            data-testid="form-id">
+                <div className="title-input" data-testid="title-id">
                 <label htmlFor="title">
                 <input type="text"
                 id="title"
@@ -73,7 +74,7 @@ const AddProperty = () => {
                 required />
                 </label>
                 </div>
-                <div className="city-input">
+                <div className="city-input" data-testid="city-id">
                 <label htmlFor="city">
                 <select
                 id="city"
@@ -87,7 +88,7 @@ const AddProperty = () => {
                 </select>
                 </label>
                 </div>
-                <div className="type-input">
+                <div className="type-input" data-testid="type-id">
                 <label htmlFor="type">
                     <select 
                     id="type"
@@ -104,7 +105,7 @@ const AddProperty = () => {
                     </select>
                 </label>
                 </div>
-                <div className="bathroom-input">
+                <div className="bathroom-input" data-testid="bathroom-id">
                     <label htmlFor="bathrooms">
                         Bathrooms:<select 
                         id="bathrooms"
@@ -120,7 +121,7 @@ const AddProperty = () => {
                         </select>
                     </label>
                 </div>
-                <div className="bedroom-input">
+                <div className="bedroom-input" data-testid="bedroom-id">
                     <label htmlFor="bedrooms">
                         Bedrooms:<select 
                         id="bedrooms"
@@ -136,7 +137,7 @@ const AddProperty = () => {
                         </select>
                     </label>
                 </div>
-                <div className="price-input">
+                <div className="price-input" data-testid="price-id">
                     <label htmlFor="price">
                         Price: <input type="text"
                         id="price"
@@ -146,7 +147,7 @@ const AddProperty = () => {
                         required/>
                     </label>
                 </div>
-                <div className="email-input">
+                <div className="email-input" data-testid="email-id">
                     <label htmlFor="email">
                         Email:<input type="email"
                         id="email"

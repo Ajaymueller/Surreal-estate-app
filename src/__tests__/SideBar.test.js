@@ -4,6 +4,8 @@ import SideBar from '../components/SideBar';
 import { MemoryRouter } from 'react-router-dom';
 import "@testing-library/jest-dom/extend-expect";
 import '@testing-library/jest-dom'
+import axios from 'axios';
+jest.mock('axios');
 
 describe("sidebar", () => {
     it("renders correctly", () => {
@@ -34,7 +36,7 @@ describe("sidebar", () => {
         expect(Liverpool).toBeInTheDocument();
     })
 
-    it("sorts by ascending or descending", () => {
+    it("can sort options by ascending or descending", () => {
         const { getByText } = render(
         <MemoryRouter><SideBar /></MemoryRouter>)
         const ascending = getByText("Ascending");
@@ -44,25 +46,56 @@ describe("sidebar", () => {
     })
 });
 
+const handleChange = (event, setter) => {
+    setter({
+        [event.target.name]: event.target.value 
+    })
+}
+
 describe("form", () => {
-    it("should have an input", () => {
+    xit("should have an input", () => {
         const { getByTestId } = render(
             <MemoryRouter><SideBar/></MemoryRouter>)
         const input  = getByTestId("input-id")
         expect(input).toHaveClass("input");
     });
-    it("input should update the state when changed", () => {
+    xit("input should update the state when changed", () => {
         const { getByTestId } = render(
             <MemoryRouter><SideBar/></MemoryRouter>)
         const input = getByTestId("input-id")
         fireEvent.change(input, { target: { value: "random title" }})
         expect(input.value).toBe('random title');
     });
+    xit("handleChange should be called onChange", async () => {
+        const setSearch = jest.fn();
+        const event = {
+            target: {
+                name: 'foo', 
+                value: 'bar',
+            },
+        }
+        handleChange(event, setSearch)
+        expect(setSearch).toHaveBeenCalled()
+    })
     xit("calls handleSearch function on submit of form", () => {
-        const handleSearch = jest.fn();
+        const handleSearch = jest.mock();
         const { getByTestId } = render(
             <MemoryRouter><SideBar/></MemoryRouter>)
         fireEvent.submit(getByTestId("form-id"));
         expect(handleSearch).toHaveBeenCalled();
     })
-});;
+    xit("calls handleSearch function on submission of form", async () => {
+        axios.get.mockResolvedValue({
+            data: [ {
+                title: 'Modern Semi detached', 
+                city: 'Liverpool', 
+                type: 'semi detached', 
+                bathrooms: '3', 
+                bedrooms: '4', 
+                price: '250000', 
+                email: 'random@hotmail.com' 
+            }
+            ]
+        });
+    });
+});
