@@ -16,7 +16,7 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
             onSubmit={handleAddProperty}
             className="form"
             data-testid="form-id">
-                <div className="title-input" data-testid="title-id">
+                <div className="title-input" data-testid="title">
                 <label htmlFor="title">
                 <input type="text"
                 id="title"
@@ -27,7 +27,7 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                 required />
                 </label>
                 </div>
-                <div className="city-input" data-testid="city-id">
+                <div className="city-input" data-testid="city">
                 <label htmlFor="city">
                 <select
                 id="city"
@@ -41,7 +41,7 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                 </select>
                 </label>
                 </div>
-                <div className="type-input" data-testid="type-id">
+                <div className="type-input" data-testid="type" >
                 <label htmlFor="type">
                     <select 
                     id="type"
@@ -58,7 +58,7 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                     </select>
                 </label>
                 </div>
-                <div className="bathroom-input" data-testid="bathroom-id">
+                <div className="bathroom-input" data-testid="bathrooms">
                     <label htmlFor="bathrooms">
                         Bathrooms:<select 
                         id="bathrooms"
@@ -74,7 +74,7 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                         </select>
                     </label>
                 </div>
-                <div className="bedroom-input" data-testid="bedroom-id">
+                <div className="bedroom-input" data-testid="bedrooms">
                     <label htmlFor="bedrooms">
                         Bedrooms:<select 
                         id="bedrooms"
@@ -90,7 +90,7 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                         </select>
                     </label>
                 </div>
-                <div className="price-input" data-testid="price-id">
+                <div className="price-input" data-testid="price">
                     <label htmlFor="price">
                         Price: <input type="text"
                         id="price"
@@ -100,7 +100,7 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                         required/>
                     </label>
                 </div>
-                <div className="email-input" data-testid="email-id">
+                <div className="email-input" data-testid="email">
                     <label htmlFor="email">
                         Email:<input type="email"
                         id="email"
