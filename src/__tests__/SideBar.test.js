@@ -53,20 +53,20 @@ const handleChange = (event, setter) => {
 }
 
 describe("form", () => {
-    xit("should have an input", () => {
+    it("should have an input", () => {
         const { getByTestId } = render(
             <MemoryRouter><SideBar/></MemoryRouter>)
         const input  = getByTestId("input-id")
         expect(input).toHaveClass("input");
     });
-    xit("input should update the state when changed", () => {
+    it("input should update the state when changed", () => {
         const { getByTestId } = render(
             <MemoryRouter><SideBar/></MemoryRouter>)
         const input = getByTestId("input-id")
         fireEvent.change(input, { target: { value: "random title" }})
         expect(input.value).toBe('random title');
     });
-    xit("handleChange should be called onChange", async () => {
+    it("handleChange should be called onChange", async () => {
         const setSearch = jest.fn();
         const event = {
             target: {
@@ -78,7 +78,7 @@ describe("form", () => {
         expect(setSearch).toHaveBeenCalled()
     })
     xit("calls handleSearch function on submit of form", () => {
-        const handleSearch = jest.mock();
+        const handleSearch = jest.fn();
         const { getByTestId } = render(
             <MemoryRouter><SideBar/></MemoryRouter>)
         fireEvent.submit(getByTestId("form-id"));

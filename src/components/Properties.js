@@ -32,7 +32,7 @@ const Properties = () => {
         }, []);
 
     return (
-        <div className="properties">
+        <div className="properties" data-testid="properties">
             <SideBar />
             {properties.map(property => <PropertyCard key={property._id} title={property.title}
             type={property.type} bathrooms={property.bathrooms}

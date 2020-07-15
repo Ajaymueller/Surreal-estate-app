@@ -16,12 +16,14 @@ const Navbar = ({ onLogin, userID, onLogout }) => {
         <nav>
         <ul id="nav_links" data-testid="nav-links-id">
             <BrowserRouter>
-            <Link to="/"> <li className="navbar-links-item">View Properties</li></Link>
+            <Link to="/" data-testid="view-properties-id"> 
+            <li className="navbar-links-item">View Properties</li></Link>
             <Link to="/add-property" ><li className="navbar-links-item">Add a Property</li></Link>
             { !userID ? <FacebookLogin appId="2346104855684184"
             autoLoad={true}
             fields="name,email,picture"
-            callback={onLogin} /> : <button onClick={onLogout}>Sign out</button> }
+            callback={onLogin} /> : <button onClick={onLogout} data-testid="btn-id">
+                Sign out</button> }
             </BrowserRouter>
         </ul>
             </nav>

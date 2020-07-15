@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/AddProperty.css';
-//import addProperty from '../requests/addProperty';
 import axios from 'axios';
-import Alert from './Alert';
+import PropertyForm from './PropertyForm'
 
 const AddProperty = () => {
 
@@ -57,116 +56,17 @@ const AddProperty = () => {
     };
 
     return(
-        <div className="AddProperty">
-            <h3>Add a property</h3>
-            <form
-            onSubmit={handleAddProperty}
-            className="form"
-            data-testid="form-id">
-                <div className="title-input" data-testid="title-id">
-                <label htmlFor="title">
-                <input type="text"
-                id="title"
-                name="title"
-                value={fields.title} 
-                onChange={handleFieldChange}
-                placeholder="Please enter a title" 
-                required />
-                </label>
-                </div>
-                <div className="city-input" data-testid="city-id">
-                <label htmlFor="city">
-                <select
-                id="city"
-                name="city"
-                value={fields.city}
-                onChange={handleFieldChange}>
-                    <option value="Manchester">Manchester</option>
-                    <option value="Leeds">Leeds</option>
-                    <option value="Sheffield">Sheffield</option>
-                    <option value="Liverpool">Liverpool</option>
-                </select>
-                </label>
-                </div>
-                <div className="type-input" data-testid="type-id">
-                <label htmlFor="type">
-                    <select 
-                    id="type"
-                    name="type"
-                    value={fields.type}
-                    onChange={handleFieldChange}>
-                        <option value="Flat">Flat</option>
-                        <option value="Detached">Detached</option>
-                        <option value="Semi-Detached">Semi-Detached</option>
-                        <option value="Terraced">Terraced</option>
-                        <option value="End of Terrace">End of Terrace</option>
-                        <option value="Cottage">Cottage</option>
-                        <option value="Bungalow">Bungalow</option>
-                    </select>
-                </label>
-                </div>
-                <div className="bathroom-input" data-testid="bathroom-id">
-                    <label htmlFor="bathrooms">
-                        Bathrooms:<select 
-                        id="bathrooms"
-                        name="bathrooms"
-                        value={fields.bathrooms}
-                        onChange={handleFieldChange}>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6+">6+</option>
-                        </select>
-                    </label>
-                </div>
-                <div className="bedroom-input" data-testid="bedroom-id">
-                    <label htmlFor="bedrooms">
-                        Bedrooms:<select 
-                        id="bedrooms"
-                        name="bedrooms"
-                        value={fields.bedrooms}
-                        onChange={handleFieldChange}>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6+">6+</option>
-                        </select>
-                    </label>
-                </div>
-                <div className="price-input" data-testid="price-id">
-                    <label htmlFor="price">
-                        Price: <input type="text"
-                        id="price"
-                        name="price"
-                        value={fields.price}
-                        onChange={handleFieldChange} 
-                        required/>
-                    </label>
-                </div>
-                <div className="email-input" data-testid="email-id">
-                    <label htmlFor="email">
-                        Email:<input type="email"
-                        id="email"
-                        name="email"
-                        value={fields.email}
-                        onChange={handleFieldChange}
-                        required />
-                    </label>
-                </div>
-                <div className="add-btn">
-                <label htmlFor="add">
-                <button type="submit" 
-                className="btn">Add</button>
-                </label>  
-                </div>
-                {alert.message && 
-                (<Alert message={alert.message} success={alert.isSuccess} />)}
-            </form>
-        </div>
+        <PropertyForm 
+        handleAddProperty={handleAddProperty}
+        handleFieldChange={handleFieldChange}
+        title={fields.title}
+        city={fields.city}
+        type={fields.type}
+        bedrooms={fields.bedrooms}
+        bathrooms={fields.bathrooms}
+        price={fields.price}
+        email={fields.email}
+        />
     )
 }
 
