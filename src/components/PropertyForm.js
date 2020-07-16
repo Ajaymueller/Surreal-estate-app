@@ -23,7 +23,8 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                 name="title"
                 value={title} 
                 onChange={handleFieldChange}
-                placeholder="Please enter a title" 
+                placeholder="Please enter a title"
+                data-testid="title-id" 
                 required />
                 </label>
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, getByRole } from '@testing-library/react';
 import PropertyForm from '../components/PropertyForm';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect'
@@ -29,7 +29,7 @@ describe.only("PropertyForm", () => {
         expect(form).toBeInTheDocument();
     })
     it("renders form fields correctly", () => {
-        const { getByTestId } = 
+        const { getByTestId, getByRole } = 
         render (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
         expect(getByTestId("title")).toBeInTheDocument()
         expect(getByTestId("city")).toBeInTheDocument()
@@ -38,11 +38,13 @@ describe.only("PropertyForm", () => {
         expect(getByTestId("bedrooms")).toBeInTheDocument()
         expect(getByTestId("price")).toBeInTheDocument()
         expect(getByTestId("email")).toBeInTheDocument()
+        expect(getByRole('button')).toBeInTheDocument()
     })
-    xit("should update the state when changed", () => {
-        const { getAllByTestId } = render 
+    it("should update the state when changed", () => {
+        const { getByTestId } = render 
         (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
-        const input = getAllByTestId("input");
+        const handleFieldChange = props.handleFieldChange;
+        const input = getByTestId("title-id");
         fireEvent.change(input, { target: { value: ""}})
         expect(handleFieldChange).toHaveBeenCalled();
     });
