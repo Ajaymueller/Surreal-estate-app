@@ -46,12 +46,6 @@ describe("sidebar", () => {
     })
 });
 
-const handleChange = (event, setter) => {
-    setter({
-        [event.target.name]: event.target.value 
-    })
-}
-
 describe("form", () => {
     it("should have an input", () => {
         const { getByTestId } = render(
@@ -66,17 +60,6 @@ describe("form", () => {
         fireEvent.change(input, { target: { value: "random title" }})
         expect(input.value).toBe('random title');
     });
-    it("handleChange should be called onChange", async () => {
-        const setSearch = jest.fn();
-        const event = {
-            target: {
-                name: 'foo', 
-                value: 'bar',
-            },
-        }
-        handleChange(event, setSearch)
-        expect(setSearch).toHaveBeenCalled()
-    })
     xit("calls handleSearch function on submit of form", () => {
         const handleSearch = jest.fn();
         const { getByTestId } = render(

@@ -15,7 +15,7 @@ describe("App", () => {
 })
 
 describe("With React router", () => {
-    it("renders Properties component", () => {
+    xit("renders Properties component", () => {
     const { getByText, getByTestId } = render(
     <MemoryRouter><App /></MemoryRouter> )
     expect(getByTestId("properties")).not.toBeInTheDocument()

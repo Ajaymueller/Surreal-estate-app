@@ -16,7 +16,7 @@ const props = {
     email: "random@gmail.com",
 };
 
-describe.only("PropertyForm", () => {
+describe("PropertyForm", () => {
     it("component renders correctly with props", () => {
         const { asFragment } = 
         render (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )

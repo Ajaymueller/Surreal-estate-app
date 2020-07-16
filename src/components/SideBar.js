@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/SideBar.css';
 import qs from 'qs';
 import { Link, useLocation, useHistory } from "react-router-dom";
+import SideBarForm from './SideBarForm';
 
 
 const SideBar = () => {
@@ -40,16 +41,10 @@ const SideBar = () => {
 
     return (
         <div className="side-bar">
-            <form onSubmit={handleSearch} data-testid="form-id">
-                <label htmlFor="search-input">
-                <input type="text"
-                value={query}
-                onChange={handleChange} 
-                data-testid="input-id"
-                className="input"/>
-                <button type="submit">Search</button>
-                </label>
-            </form>
+            <SideBarForm 
+            handleChange={handleChange}
+            handleSearch={handleSearch}
+            query={query}/>
         <ul className="navbar-links" data-testid="navbarlinks-id">
             <h3>Filter by city</h3>
             <Link to={`/?query={"city": "Manchester"}`}><li>Manchester</li></Link>

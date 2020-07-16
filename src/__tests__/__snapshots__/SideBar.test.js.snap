@@ -5,25 +5,29 @@ exports[`sidebar renders correctly 1`] = `
   <div
     class="side-bar"
   >
-    <form
-      data-testid="form-id"
+    <div
+      class="side-bar"
     >
-      <label
-        for="search-input"
+      <form
+        data-testid="sideBarForm"
       >
-        <input
-          class="input"
-          data-testid="input-id"
-          type="text"
-          value=""
-        />
-        <button
-          type="submit"
+        <label
+          for="search-input"
         >
-          Search
-        </button>
-      </label>
-    </form>
+          <input
+            class="input"
+            data-testid="input-id"
+            type="text"
+            value=""
+          />
+          <button
+            type="submit"
+          >
+            Search
+          </button>
+        </label>
+      </form>
+    </div>
     <ul
       class="navbar-links"
       data-testid="navbarlinks-id"
