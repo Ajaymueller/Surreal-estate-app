@@ -11,7 +11,7 @@ const props = {
     onLogout: jest.fn(),
 };
 
-describe("NavBar", () => {
+describe.only("NavBar", () => {
     it("component renders with correct props", () => {
         const { asFragment } = render( 
         <MemoryRouter><NavBar {...props} /></MemoryRouter>)
@@ -38,21 +38,26 @@ describe("NavBar", () => {
     const button = getByTestId("btn-id");
     expect(button).toBeInTheDocument();
     expect(button.innerHTML).toBe("Sign out");
-    })
-    xit("displays a Facebook login component", () => {
-    const { getByTestId } = render( 
-    <MemoryRouter><NavBar {...props} /></MemoryRouter>)
-
-    })
+    });
 });
 
 describe("with router", () => {
-    xit("should navigate to view properties page", () => {
+    it("should navigate to view properties page with /", () => {
         const { getByTestId } = 
         render( 
-            <MemoryRouter><NavBar {...props} /></MemoryRouter>)
+        <MemoryRouter><NavBar {...props} /></MemoryRouter>)
         const viewProperties = getByTestId("view-properties-id")
         fireEvent.click(getByText("View Properties"))
         expect(viewProperties).toBeInTheDocument();
-    })
-})
+        expect(viewProperties).toHaveAttribute("href", "/");
+    });
+    it("should navigate to Add properties page with /add-property", () => {
+        const { getByTestId } = 
+        render( 
+        <MemoryRouter><NavBar {...props} /></MemoryRouter>)
+        const addProperty = getByTestId("add-property-id")
+        fireEvent.click(getByText("Add a property"))
+        expect(addProperty).toBeInTheDocument();
+        expect(addProperty).toHaveAttribute("href", "/add-property");
+    });
+});

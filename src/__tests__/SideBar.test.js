@@ -7,6 +7,9 @@ import '@testing-library/jest-dom'
 import axios from 'axios';
 jest.mock('axios');
 import { Link } from 'react-router-dom';
+import Enzyme, { shallow, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+Enzyme.configure({ adapter: new Adapter() });
 
 describe("sidebar", () => {
     it("renders correctly", () => {
@@ -54,3 +57,13 @@ describe("with router", () => {
     })
 
 })
+
+describe("Link", () => {
+    let wrapper
+    beforeEach(() => {
+        wrapper = shallow (<MemoryRouter><SideBar /></MemoryRouter>);
+    })
+    xit("should contain 6 Link components", () => {
+        expect(wrapper.find(Link)).toBeInTheDocument();
+    });
+});
