@@ -10,7 +10,7 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
     price,
     email, }) => {
     return (
-        <div className="AddProperty" data-testid="AddProperty">
+        <div className="AddProperty" data-testid="AddPropertyForm">
             <h3>Add a property</h3>
             <form
             onSubmit={handleAddProperty}

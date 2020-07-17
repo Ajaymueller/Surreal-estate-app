@@ -56,6 +56,7 @@ const AddProperty = () => {
     };
 
     return(
+        <div data-testid="AddProperty">
         <PropertyForm 
         handleAddProperty={handleAddProperty}
         handleFieldChange={handleFieldChange}
@@ -67,6 +68,7 @@ const AddProperty = () => {
         price={fields.price}
         email={fields.email}
         />
+        </div>
     )
 }
 

@@ -14,12 +14,12 @@ const props = {
 };
 
 describe("SideBarForm", () => {
-    it("components renders with correct props", () => {
+    xit("components renders with correct props", () => {
         const { asFragment } = render (
         <MemoryRouter><SideBarForm {...props}/></MemoryRouter> )
         expect(asFragment).toMatchSnapshot();
     });
-    it("renders a form", () => {
+    xit("renders a form", () => {
         const { getByTestId } = render (
         <MemoryRouter><SideBarForm {...props}/></MemoryRouter> )
         const form = getByTestId("sideBarForm");
@@ -28,15 +28,16 @@ describe("SideBarForm", () => {
 });
 
 describe("form", () => {
-    it("calls handleChange and changes the state on any change of input", () => {
+    xit("calls handleChange and changes the state on any change of input", () => {
         const { getByTestId } = render (
         <MemoryRouter><SideBarForm {...props}/></MemoryRouter> )
-        const handleChange = props.handleChange;
+        const handleChange =  props.handleChange;
         const input = getByTestId("input-id"); 
-        fireEvent.change(input, { target: { value: "" }});
+        fireEvent.change(input, { target: { value: "random search" }});
+        expect(input.value).toBe('random search');
         expect(handleChange).toHaveBeenCalled();
     });
-    it("calls handleSubmit on submission of form", () => {
+    xit("calls handleSubmit on submission of form", () => {
         const { getByTestId } = render (
         <MemoryRouter><SideBarForm {...props}/></MemoryRouter> )
         const handleSearch = props.handleSearch;

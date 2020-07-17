@@ -6,6 +6,7 @@ import "@testing-library/jest-dom/extend-expect";
 import '@testing-library/jest-dom'
 import axios from 'axios';
 jest.mock('axios');
+import { Link } from 'react-router-dom';
 
 describe("sidebar", () => {
     it("renders correctly", () => {
@@ -46,39 +47,10 @@ describe("sidebar", () => {
     })
 });
 
-describe("form", () => {
-    it("should have an input", () => {
-        const { getByTestId } = render(
-            <MemoryRouter><SideBar/></MemoryRouter>)
-        const input  = getByTestId("input-id")
-        expect(input).toHaveClass("input");
-    });
-    it("input should update the state when changed", () => {
-        const { getByTestId } = render(
-            <MemoryRouter><SideBar/></MemoryRouter>)
-        const input = getByTestId("input-id")
-        fireEvent.change(input, { target: { value: "random title" }})
-        expect(input.value).toBe('random title');
-    });
-    xit("calls handleSearch function on submit of form", () => {
-        const handleSearch = jest.fn();
-        const { getByTestId } = render(
-            <MemoryRouter><SideBar/></MemoryRouter>)
-        fireEvent.submit(getByTestId("form-id"));
-        expect(handleSearch).toHaveBeenCalled();
+describe("with router", () => {
+    it("Link matches snapshot", () => {
+    const { asFragment } = render(
+    <MemoryRouter><SideBar /></MemoryRouter>)
     })
-    xit("calls handleSearch function on submission of form", async () => {
-        axios.get.mockResolvedValue({
-            data: [ {
-                title: 'Modern Semi detached', 
-                city: 'Liverpool', 
-                type: 'semi detached', 
-                bathrooms: '3', 
-                bedrooms: '4', 
-                price: '250000', 
-                email: 'random@hotmail.com' 
-            }
-            ]
-        });
-    });
-});
+
+})
