@@ -1,9 +1,7 @@
 import React from 'react';
-import { render, fireEvent, getByRole, findByTestId } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import NavBar from '../components/NavBar';
 import { MemoryRouter } from 'react-router-dom';
-import { Router } from 'react-router-dom'
-import { createMemoryHistory } from 'history'
 
 const props = {
     onLogin: jest.fn(), 
@@ -11,7 +9,7 @@ const props = {
     onLogout: jest.fn(),
 };
 
-describe.only("NavBar", () => {
+describe("NavBar", () => {
     it("component renders with correct props", () => {
         const { asFragment } = render( 
         <MemoryRouter><NavBar {...props} /></MemoryRouter>)
@@ -43,7 +41,7 @@ describe.only("NavBar", () => {
 
 describe("with router", () => {
     it("should navigate to view properties page with /", () => {
-        const { getByTestId } = 
+        const { getByTestId, getByText } = 
         render( 
         <MemoryRouter><NavBar {...props} /></MemoryRouter>)
         const viewProperties = getByTestId("view-properties-id")
@@ -52,11 +50,11 @@ describe("with router", () => {
         expect(viewProperties).toHaveAttribute("href", "/");
     });
     it("should navigate to Add properties page with /add-property", () => {
-        const { getByTestId } = 
+        const { getByTestId, getByText } = 
         render( 
         <MemoryRouter><NavBar {...props} /></MemoryRouter>)
         const addProperty = getByTestId("add-property-id")
-        fireEvent.click(getByText("Add a property"))
+        fireEvent.click(getByText("Add a Property"))
         expect(addProperty).toBeInTheDocument();
         expect(addProperty).toHaveAttribute("href", "/add-property");
     });

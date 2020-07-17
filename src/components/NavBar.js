@@ -18,7 +18,7 @@ const Navbar = ({ onLogin, userID, onLogout }) => {
             <BrowserRouter>
             <Link to="/" data-testid="view-properties-id"> 
             <li className="navbar-links-item">View Properties</li></Link>
-            <Link to="/add-property" ><li className="navbar-links-item">Add a Property</li></Link>
+            <Link to="/add-property" data-testid="add-property-id" ><li className="navbar-links-item">Add a Property</li></Link>
             { !userID ? <FacebookLogin appId="2346104855684184"
             autoLoad={true}
             fields="name,email,picture"
