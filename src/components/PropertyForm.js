@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/AddProperty.css';
 import Alert from './Alert';
+import PropTypes from "prop-types";
 
 const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
     city,
@@ -130,5 +131,16 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
 
     )
 }
+
+PropertyForm.propTypes = {
+    handleAddProperty: PropTypes.func.isRequired,
+    handleFieldChange: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired, 
+    type: PropTypes.string.isRequired,
+    bathrooms: PropTypes.number.isRequired, 
+    bedrooms: PropTypes.number.isRequired, 
+    price: PropTypes.number.isRequired, 
+    email: PropTypes.string.isRequired, 
+};
 
 export default PropertyForm;
