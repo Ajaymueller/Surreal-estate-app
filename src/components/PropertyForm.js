@@ -49,7 +49,8 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                     id="type"
                     name="type"
                     value={type}
-                    onChange={handleFieldChange}>
+                    onChange={handleFieldChange}
+                    data-testid="type-id">
                         <option value="Flat">Flat</option>
                         <option value="Detached">Detached</option>
                         <option value="Semi-Detached">Semi-Detached</option>
@@ -66,7 +67,8 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                         id="bathrooms"
                         name="bathrooms"
                         value={bathrooms}
-                        onChange={handleFieldChange}>
+                        onChange={handleFieldChange}
+                        data-testid="bathroom-id">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -82,7 +84,8 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                         id="bedrooms"
                         name="bedrooms"
                         value={bedrooms}
-                        onChange={handleFieldChange}>
+                        onChange={handleFieldChange}
+                        data-testid="bedroom-id">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -98,7 +101,8 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                         id="price"
                         name="price"
                         value={price}
-                        onChange={handleFieldChange} 
+                        onChange={handleFieldChange}
+                        data-testid="price-id" 
                         required/>
                     </label>
                 </div>
@@ -109,6 +113,7 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                         name="email"
                         value={email}
                         onChange={handleFieldChange}
+                        data-testid="email-id"
                         required />
                     </label>
                 </div>

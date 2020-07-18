@@ -40,22 +40,61 @@ describe.only("PropertyForm", () => {
         expect(getByTestId("email")).toBeInTheDocument()
         expect(getByRole('button')).toBeInTheDocument()
     })
-    it("should update the state when changed", () => {
+    it("should update the state when title changed", () => {
         const { getByTestId } = render 
         (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
         const handleFieldChange = props.handleFieldChange;
         const input = getByTestId("title-id");
-        fireEvent.change(input, { target: { value: "randomTitle" } });
+        fireEvent.change(input, { target: { value: "changedValue" } });
         expect(handleFieldChange).toHaveBeenCalled();
     });
-    xit("should update the state when changed", () => {
+    it("should update the state when city changed", () => {
         const { getByTestId } = render 
         (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
         const handleFieldChange = props.handleFieldChange;
         const input = getByTestId("city-id");
-        fireEvent.change(input, { target: "Manchester" });
+        fireEvent.change(input, { target: { value: "Manchester" } });
         expect(handleFieldChange).toHaveBeenCalled();
-        expect(input.value).toBe("Manchester");
+    });
+    it("should update the state when type changed", () => {
+        const { getByTestId } = render 
+        (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
+        const handleFieldChange = props.handleFieldChange;
+        const input = getByTestId("type-id");
+        fireEvent.change(input, { target: { value: "Flat" } });
+        expect(handleFieldChange).toHaveBeenCalled();
+    });
+    it("should update the state when bathroom changed", () => {
+        const { getByTestId } = render 
+        (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
+        const handleFieldChange = props.handleFieldChange;
+        const input = getByTestId("bathroom-id");
+        fireEvent.change(input, { target: { value: "4" } });
+        expect(handleFieldChange).toHaveBeenCalled();
+    });
+    it("should update the state when bedroom changed", () => {
+        const { getByTestId } = render 
+        (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
+        const handleFieldChange = props.handleFieldChange;
+        const input = getByTestId("bedroom-id");
+        fireEvent.change(input, { target: { value: "3" } });
+        expect(handleFieldChange).toHaveBeenCalled();
+    });
+    it("should update the state when price changed", () => {
+        const { getByTestId } = render 
+        (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
+        const handleFieldChange = props.handleFieldChange;
+        const input = getByTestId("price-id");
+        fireEvent.change(input, { target: { value: "250,000" } });
+        expect(handleFieldChange).toHaveBeenCalled();
+    });
+    it("should update the state when email changed", () => {
+        const { getByTestId } = render 
+        (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
+        const handleFieldChange = props.handleFieldChange;
+        const input = getByTestId("email-id");
+        fireEvent.change(input, { target: { value: "email@email.com" } });
+        expect(handleFieldChange).toHaveBeenCalled();
     });
     it("should call handleAddProperty on form submission", () => {
         const { getByTestId } = render 
@@ -65,7 +104,3 @@ describe.only("PropertyForm", () => {
         expect(handleAddProperty).toHaveBeenCalled();
     })
 });
-
-/*const handleFieldChangeMock = (input, value) => {
-    fireEvent.change(input, { target: { value }})
-}; */
