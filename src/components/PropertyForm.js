@@ -24,7 +24,7 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                 value={title} 
                 onChange={handleFieldChange}
                 placeholder="Please enter a title"
-                data-testid="title-id" 
+                data-testid="title-id"
                 required />
                 </label>
                 </div>
@@ -34,7 +34,8 @@ const PropertyForm = ({ handleAddProperty, handleFieldChange, title,
                 id="city"
                 name="city"
                 value={city}
-                onChange={handleFieldChange}>
+                onChange={handleFieldChange}
+                data-testid="city-id">
                     <option value="Manchester">Manchester</option>
                     <option value="Leeds">Leeds</option>
                     <option value="Sheffield">Sheffield</option>

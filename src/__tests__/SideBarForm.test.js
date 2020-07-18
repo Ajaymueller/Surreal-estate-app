@@ -4,8 +4,6 @@ import SideBarForm from '../components/SideBar';
 import { MemoryRouter } from 'react-router-dom';
 import "@testing-library/jest-dom/extend-expect";
 import '@testing-library/jest-dom'
-import axios from 'axios';
-jest.mock('axios');
 
 const props = {
     handleSearch: jest.fn(), 

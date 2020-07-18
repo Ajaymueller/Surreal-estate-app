@@ -1,12 +1,12 @@
 import React from 'react';
-import { render, fireEvent, getByRole } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import PropertyForm from '../components/PropertyForm';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect'
 
 const props = {
     handleAddProperty: jest.fn(),
-    handleFieldChange: jest.fn(), 
+    handleFieldChange: jest.fn(),
     title: "randomTitle", 
     city: "Liverpool", 
     type: "Semi-Detached",
@@ -16,7 +16,7 @@ const props = {
     email: "random@gmail.com",
 };
 
-describe("PropertyForm", () => {
+describe.only("PropertyForm", () => {
     it("component renders correctly with props", () => {
         const { asFragment } = 
         render (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
@@ -45,8 +45,18 @@ describe("PropertyForm", () => {
         (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
         const handleFieldChange = props.handleFieldChange;
         const input = getByTestId("title-id");
-        fireEvent.change(input, { target: { value: ""}})
+        fireEvent.change(input, { target: "randomTitle" });
         expect(handleFieldChange).toHaveBeenCalled();
+        expect(input.value).toBe("randomTitle");
+    });
+    xit("should update the state when changed", () => {
+        const { getByTestId } = render 
+        (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
+        const handleFieldChange = props.handleFieldChange;
+        const input = getByTestId("city-id");
+        fireEvent.change(input, { target: "Manchester" });
+        expect(handleFieldChange).toHaveBeenCalled();
+        expect(input.value).toBe("Manchester");
     });
     it("should call handleAddProperty on form submission", () => {
         const { getByTestId } = render 
@@ -56,3 +66,7 @@ describe("PropertyForm", () => {
         expect(handleAddProperty).toHaveBeenCalled();
     })
 });
+
+/*const handleFieldChangeMock = (input, value) => {
+    fireEvent.change(input, { target: { value }})
+}; */
