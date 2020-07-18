@@ -5,22 +5,22 @@ const PropertyCard = ({title, type, bathrooms, bedrooms, price, city, email}) =>
 
         return (
             <div className="property-card">
-                <div className="title">
+                <div className="title" data-testid="title-id">
                     {title}
                 </div>
-                <div className="type">
+                <div className="type" data-testid="type-id">
                     {type} - {city}
                 </div>
-                <div className="bathrooms">
+                <div className="bathrooms" data-testid="bathroom-id">
                     Bathrooms: {bathrooms}
                 </div>
-                <div className="bedrooms">
+                <div className="bedrooms" data-testid="bedroom-id">
                     Bedrooms: {bedrooms}
                 </div>
-                <div className="price">
+                <div className="price" data-testid="price-id">
                     Price: £{price}
                 </div>
-                <div className="email">
+                <div className="email" data-testid="email-id">
                     <a href={`mailto:${email}`}>Email for more details</a>
                 </div>
             </div>
