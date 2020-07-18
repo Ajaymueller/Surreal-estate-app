@@ -27,6 +27,12 @@ describe.only("PropertyForm", () => {
         render (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
         const form = getByTestId("form-id");
         expect(form).toBeInTheDocument();
+    });
+    it("form should have an add button", () => {
+        const { getByRole } = 
+        render (<MemoryRouter><PropertyForm {...props} /></MemoryRouter> )
+        const btn = getByRole("button");
+        expect(btn).toHaveTextContent("Add");
     })
     it("renders form fields correctly", () => {
         const { getByTestId, getByRole } = 
