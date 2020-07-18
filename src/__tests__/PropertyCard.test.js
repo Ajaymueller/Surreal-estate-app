@@ -8,8 +8,8 @@ const props = {
     type:"Semi-Detached", 
     bathrooms: 3, 
     bedrooms: 4, 
-    Price: 200000, 
-    Email: "random@email.com"
+    price: 200000, 
+    email: "random@email.com"
 }; 
 
 describe("PropertyCard", () => {
