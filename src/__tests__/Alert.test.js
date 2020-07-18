@@ -14,4 +14,14 @@ describe("alert", () => {
     <MemoryRouter><Alert { ...props } /></MemoryRouter> )
     expect(asFragment).toMatchSnapshot();
     });
+    it("displays an error message", () => {
+    const { getByText } = render (
+    <MemoryRouter><Alert message="Success" /></MemoryRouter> )
+    expect(getByText(/Success/).textContent).toBe("Success");
+    });
+    it("renders an error message", () => {
+    const { getByText } = render (
+    <MemoryRouter><Alert message="Error" /></MemoryRouter> )
+    expect(getByText(/Error/).textContent).toBe("Error");
+    });
 });
