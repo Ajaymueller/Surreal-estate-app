@@ -28,6 +28,7 @@ const PropertyCard = ({title, type, bathrooms, bedrooms, price, city, email}) =>
         )
 }
 
+
 PropertyCard.propTypes = {
     title: PropTypes.string.isRequired, 
     type: PropTypes.string.isRequired,

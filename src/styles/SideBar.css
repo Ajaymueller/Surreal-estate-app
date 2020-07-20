@@ -1,4 +1,8 @@
 .side-bar {
+  /*grid-column: 1/4;
+  grid-row: 2/3;
+  font-size: 14px;
+  */
   left: 0px;
   margin: 0px;
   padding: 5px;

@@ -28,12 +28,12 @@ const AddProperty = () => {
     const handleAddProperty = (event) => {
         event.preventDefault();
         setAlert({ message: "", isSuccess: false });
-        if(!price.value === Number) {
+        if(!initialState.fields.price === Number) {
             alert("Price must be a number!")
         } else {
             axios
-            .post('http://localhost:4000/api/v1/PropertyListing', { title: title.value, city: city.value, type: type.value, 
-            bathrooms: bathrooms.value, bedrooms: bedrooms.value, price: price.value, email: email.value })
+            .post('http://localhost:4000/api/v1/PropertyListing', { title: fields.title, city: fields.city, type: fields.type, 
+            bathrooms: fields.bathrooms, bedrooms: fields.bedrooms, price: fields.price, email: fields.email })
             .then((response) => {
             console.log(response)
             setAlert({
