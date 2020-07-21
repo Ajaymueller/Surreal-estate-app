@@ -7,13 +7,18 @@ import {
   faBath,
   faPoundSign,
   faEnvelope,
-  faStar,
+  faHome,
 } from "@fortawesome/free-solid-svg-icons";
+
+import house from "../house-icon.png.jpeg"
 
 const PropertyCard = ({title, type, bathrooms, bedrooms, price, city, email}) => {
 
         return (
             <div className="property-card">
+                <div className="property-card-logo">
+                    <img src={house} className="house" /> 
+                </div>
                 <div className="title" data-testid="title-id">
                     {title}
                 </div>
