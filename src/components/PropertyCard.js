@@ -1,6 +1,14 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import '../styles/PropertyCard.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBed,
+  faBath,
+  faPoundSign,
+  faEnvelope,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 
 const PropertyCard = ({title, type, bathrooms, bedrooms, price, city, email}) => {
 
@@ -13,16 +21,17 @@ const PropertyCard = ({title, type, bathrooms, bedrooms, price, city, email}) =>
                     {type} - {city}
                 </div>
                 <div className="bathrooms" data-testid="bathroom-id">
-                    Bathrooms: {bathrooms}
+                    <FontAwesomeIcon icon={faBath} /> {bathrooms}
                 </div>
                 <div className="bedrooms" data-testid="bedroom-id">
-                    Bedrooms: {bedrooms}
+                    <FontAwesomeIcon icon={faBed} /> {bedrooms}
                 </div>
                 <div className="price" data-testid="price-id">
-                    Price: £{price}
+                    <FontAwesomeIcon icon={faPoundSign} /> {price}
                 </div>
                 <div className="email" data-testid="email-id">
-                    <a href={`mailto:${email}`}>Email for more details</a>
+                    <FontAwesomeIcon icon={faEnvelope} /> 
+                    <a href={`mailto:${email}`}>Email for details</a>
                 </div>
             </div>
         )

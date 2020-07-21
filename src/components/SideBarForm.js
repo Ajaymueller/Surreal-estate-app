@@ -3,7 +3,7 @@ import '../styles/SideBar.css';
 
 const SideBarForm = ({handleChange, handleSearch, query}) => {
     return (
-        <div className="side-bar">
+        <div className="">
         <form onSubmit={handleSearch} data-testid="sideBarForm">
             <label htmlFor="search-input">
             <input type="text"

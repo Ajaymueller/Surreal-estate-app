@@ -2,4 +2,6 @@
 
 .App {
     font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    flex-direction: column;
 };

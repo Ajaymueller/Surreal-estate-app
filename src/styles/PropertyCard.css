@@ -1,33 +1,31 @@
-
 .property-card {
-    display: inline-block;
-    width: 29.33%;
-    padding: 10px;
-    border: 5px solid white;
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-size: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    text-align: center;
-    background-color: #f1f1f1;
-    color:#262626;
-    margin: 20px;
-  }
+  display: inline-block;
+  padding: 10px;
+  border: 5px solid white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #f1f1f1;
+  color:#262626;
+  margin: 20px;
+}
 
 .title {
-    font-size: larger;
-    font-weight: bold;
+  font-size: larger;
+  font-weight: bold;
 }
 
 a:hover {
-  color: green
+color: green
 }
 
 
 @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
+}
