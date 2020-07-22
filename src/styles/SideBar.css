@@ -6,7 +6,6 @@
     left: 0px;
     margin: 0px;
     padding: 5px;
-    height: 100vh;
     transition: all .5s ease;
     background-color: #f1f1f1;
     border: 1px solid #555;
@@ -14,7 +13,7 @@
     flex-direction: column;
   }
   
-  .sidebar ul li {
+  /*.sidebar ul li {
       list-style: none;
       padding: 12px 10px;
       border-bottom: 2px;
@@ -51,4 +50,4 @@
       color:#BBBBBB;
       border-color:#BBBBBB;
       cursor: pointer;
-  }
+  }*/
