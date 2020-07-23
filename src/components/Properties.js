@@ -33,24 +33,29 @@ const Properties = () => {
 
     return (
         <div>
-            <SideBar />
-        <div className="properties" data-testid="properties">
-            {properties.map((property) => (
-              <div className="properties" key={property._id}>
-                <PropertyCard
-                  _id={property._id}
-                  title={property.title}
-                  city={property.city}
-                  type={property.type}
-                  bathrooms={property.bathrooms}
-                  bedrooms={property.bedrooms}
-                  price={property.price}
-                  email={property.email} /> </div> ))}
+          <div className="property-card">
             <Alert message={alert.message} success={alert.isSuccess} />
-        </div>
-        </div>
+            <div className="cards">
+              {properties.map((property) => (
+                <div className="card" key={property._id}>
+                  <PropertyCard
+                    _id={property._id}
+                    title={property.title}
+                    city={property.city}
+                    type={property.type}
+                    bathrooms={property.bathrooms}
+                    bedrooms={property.bedrooms}
+                    price={property.price}
+                    email={property.email}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          </div>
         )
-};
+  };
+
 
 export default Properties;
 

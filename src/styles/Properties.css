@@ -1,7 +1,5 @@
-.properties {
-    padding: 0.5rem;
-    margin: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.property-card {
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
 }

@@ -9,7 +9,7 @@ const Navbar = ({ onLogin, userID, onLogout }) => {
 
     return (
         <div className="navbar" data-testid="navbar">
-        <div> <img 
+        <div className="logo"> <img 
         src={logo}
         className="logo"
         alt="logo" /> </div>

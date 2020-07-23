@@ -15,14 +15,15 @@ import house from "../house-icon.png.jpeg"
 const PropertyCard = ({title, type, bathrooms, bedrooms, price, city, email}) => {
 
         return (
-            <div className="property-card">
-                <div className="property-card-logo">
+            <div>
+                <div className="property-card">
+                <div className="house-logo">
                     <img src={house} className="house" /> 
                 </div>
                 <div className="title" data-testid="title-id">
                     {title}
                 </div>
-                <div className="type" data-testid="type-id">
+                <div className="type-city" data-testid="type-id">
                     {type} - {city}
                 </div>
                 <div className="bathrooms" data-testid="bathroom-id">
@@ -38,6 +39,7 @@ const PropertyCard = ({title, type, bathrooms, bedrooms, price, city, email}) =>
                     <FontAwesomeIcon icon={faEnvelope} /> 
                     <a href={`mailto:${email}`}>Email for details</a>
                 </div>
+            </div>
             </div>
         )
 }

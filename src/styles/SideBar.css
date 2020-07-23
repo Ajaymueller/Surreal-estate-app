@@ -1,0 +1,10 @@
+.sidebar {
+    grid-column: 2/ 4;
+    grid-row: 2 / 3;
+    font-size: 15px;
+}
+
+.navbar-links {
+    text-decoration: none;
+    list-style: none;
+}

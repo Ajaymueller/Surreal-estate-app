@@ -1,12 +1,24 @@
 .navbar {
-    background-color: #ffffff;
-    border-bottom: 1px solid #c6c6c6;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #c6c6c6;
 }
 
 .logo {
+    display: flex;
+    align-items: baseline;
+    white-space: nowrap;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    color: rgb(93, 9, 104);
+    opacity: 1;
     height: 80px;
     padding: 10px;
 }

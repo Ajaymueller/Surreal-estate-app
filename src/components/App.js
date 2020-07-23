@@ -22,7 +22,6 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
       <NavBar onLogin={handleLogin} userID={userID} onLogout={handleLogout} />
       <Switch>
         <Route exact path="/" component={Properties}>
@@ -32,7 +31,6 @@ function App() {
           <AddProperty />
         </Route>
       </Switch>
-      </Router>
     </div>
   );
 }

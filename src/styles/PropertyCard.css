@@ -1,41 +1,12 @@
-.property-card {
-  display: flex;
-  flex: 0 1 225px;
-  flex-direction: column;
-  padding: 10px;
-  border: 5px solid white;
-  border-radius: 10px;
-  box-sizing: border-box;
-  font-size: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  text-align: center;
-  background-color: #f1f1f1;
-  color:#262626;
-  margin: 20px;
-  max-height: 300px;
-  width: 300px;
-}
-
-.property-card-logo {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
 .house {
-  height: 100px;
-  width: 200px;
+  height: 50px;
+  width: 50px;
 }
 
-.title {
-  font-size: larger;
-  font-weight: bold;
+.property-card {
+  grid-column: 2 / 4;
+  grid-row: 4 / 5;
 }
-
-a:hover {
-color: green
-}
-
 
 @media screen and (max-width: 600px) {
   .column {
